@@ -377,7 +377,7 @@ with k2:
     st.markdown(f"""
     <div class="kpi-card">
         <div class="kpi-label">Total Revenue</div>
-        <div class="kpi-value">£{total_revenue:,.0f}</div>
+        <div class="kpi-value">&#36;{total_revenue:,.0f}</div>
         <div class="kpi-delta-up">▲ Lifetime value</div>
     </div>""", unsafe_allow_html=True)
 
@@ -385,7 +385,7 @@ with k3:
     st.markdown(f"""
     <div class="kpi-card">
         <div class="kpi-label">Avg Order Value</div>
-        <div class="kpi-value">£{avg_order_value:,.2f}</div>
+        <div class="kpi-value">&#36;{avg_order_value:,.2f}</div>
         <div class="kpi-delta-up">Per transaction</div>
     </div>""", unsafe_allow_html=True)
 
@@ -564,7 +564,7 @@ if len(vip_segment) > 0:
         line=dict(width=2),
     ))
     fig_box.add_trace(go.Box(
-        y=vip_segment["Value"], name="Monetary (£)",
+        y=vip_segment["Value"], name="Monetary ($)",
         marker_color="#fed330", boxmean="sd",
         line=dict(width=2),
     ))
@@ -591,10 +591,10 @@ if len(vip_segment) > 0:
         a well-documented risk pattern in retail. Your top 5% of VIP customers
         (<strong>{whale_count} accounts</strong>) contribute <strong>{whale_pct:.1f}%</strong>
         of VIP segment revenue, with the largest single account at
-        <strong>£{max_value:,.0f}</strong>.<br><br>
+        <strong>&#36;{max_value:,.0f}</strong>.<br><br>
         Losing even 1–2 of these accounts could crater monthly revenue by double digits.
         <strong>Recommended action:</strong> Build a dedicated Key Account Management (KAM) program
-        for customers above the 95th percentile (£{p95_value:,.0f}+), with personalized SLAs,
+        for customers above the 95th percentile (&#36;{p95_value:,.0f}+), with personalized SLAs,
         quarterly business reviews, and a dedicated relationship manager. This isn't CRM — it's
         revenue insurance.
     </div>
@@ -803,7 +803,7 @@ st.markdown(f"""
     • <strong>Potential Loyal</strong> customers score <strong>{pot_loyal_f:.1f}</strong> on Frequency
     but only <strong>{pot_loyal_m:.1f}</strong> on Monetary — frequent browsers or small-basket buyers.
     In competitive retail, converting these into High-Value requires <strong>cross-selling and
-    basket-size strategies</strong>: product bundling, tiered discounts (spend £50 get 10% off),
+    basket-size strategies</strong>: product bundling, tiered discounts (spend $50 get 10% off),
     and free shipping thresholds.<br><br>
     • <strong>At Risk</strong> customers show a Recency score of just <strong>{at_risk_r:.1f}</strong> —
     the classic early-warning signal of disengagement. Industry data shows you have a
