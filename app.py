@@ -175,6 +175,9 @@ def load_data():
     df = pd.read_csv("online_retail.csv", encoding="ISO-8859-1")
     df.dropna(subset=["CustomerID"], inplace=True)
     df["InvoiceDate"] = pd.to_datetime(df["InvoiceDate"])
+    # Original prices are in GBP — convert to USD using 2010-2011 avg rate
+    GBP_TO_USD = 1.58  # Historical average GBP/USD rate for Dec 2010 – Dec 2011
+    df["UnitPrice"] = df["UnitPrice"] * GBP_TO_USD
     df["TotalAmount"] = df["Quantity"] * df["UnitPrice"]
     df["CustomerID"] = df["CustomerID"].astype(int)
     return df
